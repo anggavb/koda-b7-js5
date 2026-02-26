@@ -5,12 +5,11 @@ const account = {
 }
 
 let newPassword = 'supersecret'
-
-function changePassword(account, newPassword) {
+if (newPassword.length < 5) {
+  console.log("Password must be at least 5 characters long");
+} else {
   let newAccount = { ...account, password: newPassword }
-  return newAccount
-}
 
-let updateAccount = changePassword(account, newPassword)
-console.log('Account before update:', account);
-console.log('Account after update:', updateAccount);
+  console.log('Account before update:', account);
+  console.log('Account after update:', newAccount);
+}
